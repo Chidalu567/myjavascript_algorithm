@@ -11,7 +11,26 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+  /**
+   * Find the modulus of number for 3 and 5, if 3 = 0 then fizz else 5 = 0 buzz
+   */
+  // run  a for loop to loop through all numbers lesser than n
+
+  for (let x = 1; x <= n; x++){
+    let str = ""; // concat string
+    if (x % 3 === 0) {
+      str += "fizz"; // 6 % 3 = 0 , str = "fizz"
+    }
+    if (x % 5 === 0) {
+      str += "buzz"; // 10 % 5 = 0 , str ="buzz"
+    }/*if n=15, str=fizzbuzz */
+    if (str === "") {
+      str = x;
+    }
+      console.log(str);
+  }
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

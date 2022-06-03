@@ -6,7 +6,34 @@
 // chunk(["a", "b", "c", "d"], 2) --> [[ "a", "b"], ["c", "d"]]
 // chunk([0, 1, 2, 3, 4, 5], 4) -->  [[0, 1, 2, 3], [4, 5]]
 
-function chunk(array, size) {}
+function chunk(array, size) {
+  /**
+   * create an array to populate
+   * loop through the array
+   * check if there is a sub array, not -> create , any -> check if the length === size
+   * if size if met populate another sub array and push to the populate array
+   */
+  const populate = []; // array to be populated
+  for (var i = 0; i < array.length; i++){
+    const element = array[i];
+    const subarray = populate[populate.length - 1]; // subarray in populate array
+
+    if (!subarray || subarray.length === size) {
+      /**
+       * when the subarray size is reached we push it to the populate array
+       * subarray1 ["a","b"] -> [[subarray1]]
+      */
+      populate.push([element]);
+    } else {
+      // if subarray size !===size we keep on pushing the element to it.
+      /**
+       * "a" -> ["a"], "b" -> ["a","b"]
+       */
+      subarray.push(element);
+    }
+  }
+  return populate;
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

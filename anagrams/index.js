@@ -8,7 +8,25 @@
 //   anagrams('Heart!', 'EARTH') --> True
 //   anagrams('lol', 'lolc') --> False
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+  /**
+   * Anagrams solution1 has time complexity of O(N*M)
+   */
+  var purifiedStringA = stringA.toLowerCase().replace(/[\W_]+/g, '');
+  var purifiedStringB = stringB.toLowerCase().replace(/[\W_]+/g, '');
+  /**
+   * If the length of stringA = stringB
+   * sort the string in alpabetical order
+   * compare the both of them
+   */
+  var sortedStringA = purifiedStringA.split('').sort();
+  var sortedStringB = purifiedStringB.split('').sort();
+
+  var joinedStringA = sortedStringA.join('');
+  var joinedStringB = sortedStringB.join('');
+
+  return joinedStringA === joinedStringB;
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

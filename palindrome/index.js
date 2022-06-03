@@ -5,7 +5,19 @@
 //   palindrome("Madam") === true
 //   palindrome("love") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  // convert string to array
+  // reverse the array
+  // match if it is equal to the initial
+  const reversedString = str.toLowerCase().split("").reduce((output, character) => {
+    output = character + output;
+    return output;
+  });
+
+  //time complexity is O(n) since we looped through the string N times based on the length
+
+  return str.toLowerCase() === reversedString;
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

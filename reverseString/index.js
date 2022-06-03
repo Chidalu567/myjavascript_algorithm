@@ -4,7 +4,13 @@
 //   reverse('abcd') === 'dcba'
 //   reverse('Hello!') === '!olleH'
 
-function reverse(str) {}
+function reverse(str) {
+	// string reversal has a Big O notation of O(n) since it loops through the string N times.
+	return str.split("").reduce((output, char) => {
+		output = char + output;
+		return output;
+	});
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \

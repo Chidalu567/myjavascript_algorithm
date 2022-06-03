@@ -5,7 +5,21 @@
 //   capitalize("I'm a little tea pot") --> 'I'm A Little Tea Pot'
 //   capitalize('sHoRt AnD sToUt') --> 'Short And Stout'
 
-function capitalize(str) {}
+function capitalize(str) {
+  /**
+   *  split the string by space to split words
+   *  iterate throught the words
+   *  select the words and convert the first letter to capital and others to lower case
+   *  join the string back
+  */
+  const splittedString = str.split(' ');
+  const solved = []; // array to store handled words
+  for (let x = 0; x < splittedString.length; x++) {
+    const selectedString = splittedString[x]; // select specific words
+    solved.push(selectedString[0].toUpperCase() + selectedString.slice(1).toLowerCase()); // solve
+  }
+  return solved.join(' '); // join the strings with space
+}
 
 // _________ _______  _______ _________   _______  _______  _______  _______  _______
 // \__   __/(  ____ \(  ____ \\__   __/  (  ____ \(  ___  )(  ____ \(  ____ \(  ____ \
